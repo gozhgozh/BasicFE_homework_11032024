@@ -1,0 +1,162 @@
+* {
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
+}
+
+/* size of boxes */
+.inner-container div {
+    width: 200px;
+    height: 200px;
+}
+
+/* alignment of boxes */
+.inner-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 50px;
+    margin-top: 16px;
+}
+
+/* color and position of boxes */
+.empty-box-red {
+    border: 2px solid #bf616a;
+    /* red box always has a first place => no position */
+}
+
+.empty-box-blue {
+    border: 2px solid #5e81ac;
+    position: relative;
+    /* blue and green boxes always have a relative position except the first section */
+}
+
+.empty-box-green {
+    border: 2px solid #a3be8c;
+    position: relative;
+}
+
+.solid-box-red {
+    background-color: #bf616a;
+    position: relative;
+}
+
+.solid-box-blue {
+    background-color: #5e81ac;
+    position: relative;
+}
+
+.solid-box-green {
+    background-color: #a3be8c;
+    position: relative;
+}
+
+/* position of boxes in the first section */
+section:first-of-type .inner-container div {
+    position: static;
+}
+
+/*  space after first section */
+section:first-of-type {
+    margin-bottom: 50px;
+}
+
+/* space after all other sections except 1st */
+section:nth-of-type(n + 2) {
+    margin-bottom: 300px;
+}
+
+/* offset of the blue box */
+.inner-container div:nth-last-of-type(2) {
+    top: 125px;
+    right: 125px;
+}
+
+/* offset of the green box */
+.inner-container div:last-of-type {
+    top: 250px;
+    right: 250px;
+}
+
+/* z-index classes */
+.z-index-1 {
+    z-index: 1;
+}
+
+.z-index-2 {
+    z-index: 2;
+}
+
+.z-index-3 {
+    z-index: 3;
+}
+
+/* example7.html styles */
+.portfolio-text {
+    border-radius: 24px;
+    border: 2px solid #b43273;
+    padding: 16px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.portfolio-text h1,
+.portfolio-text p {
+    color: #b43273;
+    margin-bottom: 16px;
+}
+
+/* this styles push footer to the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    margin: 0 auto;
+}
+
+/* footer styles */
+footer {
+    text-align: center;
+    background-color: #b43273;
+    color: white;
+    padding: 8px;
+    position: sticky;
+    bottom: 0;
+    margin-top: auto; /* pushes footer down when page is too long or text is too short */
+}
+
+/* navigation styles */
+header {
+    position: sticky;
+    top: 16px;
+    margin-bottom: 50px;
+    z-index: 999;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    list-style-type: none;
+}
+
+/* button styles */
+a {
+    text-decoration: none;
+    color: white;
+    background-color: #b43273;
+    padding: 8px 16px;
+    text-align: center;
+    display: block;
+    line-height: 1;
+    border-radius: 8px;
+    box-shadow: 0px 5px 13px -7px rgba(0, 0, 0, 0.75);
+    transition-duration: 0.2s;
+}
+
+a:hover {
+    box-shadow: none;
+}
